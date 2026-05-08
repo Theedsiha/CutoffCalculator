@@ -1,18 +1,20 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class CutoffCalculatorTest {
 
     CutoffCalculator cc = new CutoffCalculator();
 
     @Test
-    void testCutoff1() {
+void testCutoff1() {
 
-        double result = cc.calculateCutoff(200, 200, 200);
+    double result = cc.calculateCutoff(200, 200, 200);
 
-        assertEquals(200.0, result);
+    assertEquals(200.0, result);
+}
+    private void assertEquals(double d, double result) {
+       
+        throw new UnsupportedOperationException("Unimplemented method 'assertEquals'");
     }
-
     @Test
     void testCutoff2() {
 

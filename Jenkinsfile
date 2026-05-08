@@ -1,28 +1,35 @@
 pipeline {
     agent any
+
     stages {
+
+        stage('Clone Repository') {
+            steps {
+                git https://github.com/Theedsiha/CutoffCalculatorr.git
+            }
+        }
 
         stage('Build') {
             steps {
-                bat 'mvn compile'
+                sh 'mvn clean compile'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                sh 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
-                bat 'mvn package'
+                sh 'mvn package'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deployment Successful'
+                echo 'Deploying application...'
             }
         }
     }
