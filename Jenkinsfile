@@ -5,31 +5,31 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-username/CutoffCalculator.git'
+                git 'https://github.com/Theedsiha/CutoffCalculator.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn compile'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Application Deployed Successfully'
+                echo 'Deployment Successful'
             }
         }
     }
